@@ -46,23 +46,23 @@ export default function TextForm(props) {
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpchange}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpchange}>
           Convert to Upper-Case
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleLowchange}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLowchange}>
           Convert to Lower-Case
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
           Copy Text
         </button>
         <button
-          className="btn btn-primary mx-1"
+          className="btn btn-primary mx-1 my-1"
           onClick={handleRemoveExtraSpaces}
         >
           Remove Extra Spaces
         </button>
         <button
-          className="btn btn-danger mx-1 float-end"
+          className="btn btn-danger mx-1 my-1 float-end"
           onClick={handleClearchange}
         >
           Clear
@@ -71,11 +71,11 @@ export default function TextForm(props) {
       <div className="container my-4">
         <h1>Your Text Summery</h1>
         <p>
-          <b>{text.split(" ").length}</b> words and <b>{text.length}</b>{" "}
+          <b>{text.split(" ").filter((element)=>{return element.length!==0})}</b> words and <b>{text.length}</b>{" "}
           characters
         </p>
         <p>
-          <b>{0.008 * text.split(" ").length}</b> Minutes read
+          <b>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length}</b> Minutes read
         </p>
 
         <h1>Preview</h1>
